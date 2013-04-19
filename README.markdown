@@ -16,7 +16,4 @@ Just add this code to the logger initializer in your app delegate:
 `[DDLog addLogger:[DDNSLoggerLogger sharedInstance]];`
 
 
-Don't forget to 
-
-`git submodules init
-git submodules update`
+This code uses ARC.
