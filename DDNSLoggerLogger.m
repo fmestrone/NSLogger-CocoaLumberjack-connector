@@ -77,17 +77,18 @@ static Logger *_DDNSLogger_logger = nil;
 	{
 		// NSLogger log levels start a 0, the bigger the number,
 		// the more specific / detailed the trace is meant to be
-        int nsloggerLogLevel = 0;
+        	int nsloggerLogLevel = 0;
 
-        for (int i = 1, iter = 1; i < (int)pow(2,10); i <<= 1, iter++) {
+        	for (int i = 1, iter = 1; i < (int)pow(2,10); i <<= 1, iter++) {
 
-            if (logMessage->logFlag & i) {
+            	if (logMessage->logFlag & i) {
 
-                nsloggerLogLevel = iter - 1;
-            }
+                	nsloggerLogLevel = iter - 1;
+                	break;
+            	}
         }
 
-	    LogMessageF(logMessage->file, logMessage->lineNumber, logMessage->function, [logMessage fileName], 
+	LogMessageF(logMessage->file, logMessage->lineNumber, logMessage->function, [logMessage fileName], 
                                 nsloggerLogLevel, @"%@", logMsg);
     }
 }
